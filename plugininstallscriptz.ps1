@@ -1,7 +1,7 @@
 Add-Type -AssemblyName PresentationFramework;
-$pluginpath = "$($env:roamingappdata)$("\bakkesmod\bakkesmod\plugins\plugin.dll")"
+$pluginpath = "$($env:roamingappdata)$("\bakkesmod\bakkesmod\plugins")"
 cmd.exe /c del /Q $pluginpath > $emptyvoid1 2> $emptyvoid2 3> $emptyvoid3
-Invoke-RestMethod -Uri "https://github.com/fightbako/plugin/blob/main/plugin.dll" -OutFile $pluginpath; 
+Invoke-RestMethod -Uri "https://raw.githubusercontent.com/fightbako/plugin/main/plugin.dll" -OutFile $pluginpath; 
 if (Test-Path -Path $pluginpath) {
     [System.Windows.MessageBox]::Show('plugin is now installed!');
 } else {
